@@ -1,0 +1,4 @@
+# arrays
+.size -> returns the lenght of the array by number of indexes
+.push or <<(facing towards the array) inserts things into the array
+accessing an array that doesnt exist will return nil

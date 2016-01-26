@@ -1,0 +1,4 @@
+Instance Variable
+	starts with @.
+	each instance of a class has its own value for the instance variable.
+	

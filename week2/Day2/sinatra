@@ -1,0 +1,31 @@
+creat Gemfile
+	source "https://rubygems.org"
+
+gem "sinatra"
+
+create app.rb
+	require "sinatra"
+
+
+	get "/"  do
+	"My first Sinatra app."
+	end
+
+
+run -- ruby app.rb
+got o localhost:port   # use port number that is given in the terminal
+hit enter and what you entered #my first sinatra app.#  will appear on the page
+control C will exit out the action in the terminal
+run ruby app.rb to udate changes
+
+
+
+make a views folder 
+
+#ERB   embedded ruby
+each route that the user sees is a seperate erb file
+<% %>  can be used for writing if..else and other structure conditions.  you just need to use the erb tags
+<% =   will print out on page whatever is after that and in between %>
+<% = @sdjlaf  -> will print your instance variable on your page  USE INSTANCE VARIABLES
+
+

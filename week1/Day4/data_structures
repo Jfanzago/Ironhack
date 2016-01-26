@@ -1,0 +1,20 @@
+Inheritance
+	allows you to create a class that is a refinement or a specialisation of 
+	antoher class.
+	use of is- a relationships.
+
+Mixins
+	provides the ability of mixing in methods in classes.
+	through modules
+	use for is-able-to relationships.
+
+Composition
+	when an object achieves its behavior by containing another object.
+	Use for has-a relationships. 
+
+Dependency injection
+	An injection is the passing of a dependency(an object) to a dependent object
+	(a client). The object is made part of the client's state. 
+
+Duck Types
+	for behaves-like-a relationships.

@@ -1,0 +1,11 @@
+Each
+	runs a block of code for each element of a collection
+
+Map
+	returns an array that is the result of applying a block of code to each of
+	the elemetns of that collection.
+
+Reduce
+	transforma a collection into a single value applying a block of code many times.
+
+		

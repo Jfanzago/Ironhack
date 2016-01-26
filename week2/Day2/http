@@ -1,0 +1,28 @@
+HTTP is used throughout the internet.
+using commands like GET POST PUT DELETE.
+
+#HTTP verbs
+GET is the most used command.
+used when you need to retrieve information from the internet.
+\\can be cached.
+A search is a GET request.
+
+POST is for sending information.  
+\\are never cached.
+used when uploading files..
+A tweet is a POST request.
+
+#Status Codes
+100 ==  informational. request recieved, server continuing process. ("hold on")
+200 == success. ("here you go")
+	200 = OK
+300 == redirection. further action must be taken. ("go away")
+400 == client error. request not understood. ("you fucked up")
+500 == server error. server filed to serve valid request. ("I fucked up")
+
+#cookies
+every time you make a request it sends the cookie number to the server. therefore the server "remembers" the request through
+the long number sequence
+
+
+

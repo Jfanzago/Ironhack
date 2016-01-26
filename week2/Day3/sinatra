@@ -1,0 +1,32 @@
+#Gemfile
+source: "http://rubygems.org"
+gem "sadklf"
+
+-then 'bundle install' on your terminal to install all the gems. if you add a gem you need to run it again.
+-then require the gem in whatever file needs it. 
+
+#app.rb
+-1st: get "/" do ...
+
+#Auto-reloader
+add gem "sinatra-contrib"
+server: require "sinatra/reloader" if development?
+-if you change and external file you still need to reload 
+(lib folder, views)
+
+#pry
+-require "pry"
+-insert 'binding.pry' where you want to see pry on the terminal.
+-freezes anything afterwards.
+
+#status code
+status method
+
+get "/urlofchoice" do
+	status(418)  #orwhatever number you choose
+	"I'm a tea pot!"
+end	
+
+#sessions
+-1st 'enable(:sessions)' at top of app.rb
+-reference sessions by --- session[:'hash']
