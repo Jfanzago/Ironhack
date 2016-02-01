@@ -1,0 +1,14 @@
+.border{
+	border-style: solid;
+border-color: black;
+}
+
+.firstbox{
+	margin-left: 300px;
+	margin-right: 400px;
+	padding:20px;
+}
+
+.img{
+	margin-left: 20px;
+}

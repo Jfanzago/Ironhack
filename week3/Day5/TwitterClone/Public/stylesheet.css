@@ -1,0 +1,33 @@
+
+}
+.glyphicon {
+	color:#787878;
+	font-size:18px;
+	height: auto;
+}
+
+.centered{
+	width:25px;
+	height:auto;
+}
+
+.top {
+	margin-top: 8px;
+}
+
+.text {
+	font:Helvetica;
+/*	font-weight:bold;
+*/}
+.photo{
+	width: 100%;
+
+}
+.margin{
+	margin-right: -15px;
+}
+.egg{
+	width:75px;
+	height: auto;
+}
+
