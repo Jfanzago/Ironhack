@@ -1,49 +1,62 @@
-$(document).on("ready", function(){
-  $(".js-artist-submit").on("click", getSpotifyArtists)
-})
+// app.js
 
-function getSpotifyArtists(){
-  var searchTerm = $('.js-artist-input')
-                      .val()
-                      .split(" ")
-                      .join("+");
+$(document).on("ready", function () {
 
-  $.ajax({
-    url: "https://api.spotify.com/v1/search?type=artist&query=" + searchTerm,
-    success: onArtistFindSuccess, 
-    error: onArtistFindError
-  })
-  // This clears the input box's term
-  $('.js-artist-input').val("")
-}
+  $(".js-list-albums").on("click", function (event) {
+    // The thing that was just clicked:
+    //     event.currentTarget
+    //           OR
+    //          this
 
-function onArtistFindSuccess(artistResponse){
-  $(".artist-list").empty();
+    var artistId = $(event.currentTarget).data("artist-id");
+    var artistName = $(event.currentTarget).text();
 
-  artistResponse.artists.items.forEach(function(artist){
-    createArtistHtml(artist);
-  })
-}
+    // Remove extra spaces from name
+    artistName = artistName.trim();
+    //                                          OR
+    // var artistId = $(event.currentTarget).prop("data-artist-id");
 
-function createArtistHtml(artist){
-  var image;
+    console.log(`You clicked the artist ${artistId}`);
 
-  if (artist.images.length > 0){
-    image = artist.images[0].url
-  } else {
-    image = "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQCk2bayZHUJsWeglTeTOvjcX3PvSpnkqU3T-6YmCE6bT1nFQ56Bw"
-  }
+    $.ajax({
+      url: `https://api.spotify.com/v1/artists/${artistId}/albums`,
+      success: function (response) {
 
-  var html = `
-  <li class="artist-item">
-    <h4>${artist.name}</h4>
-    <img class="artist-image" src="${image}">
-  </li>
-  `;
+        $(".js-artist-name").text(`${artistName}'s Albums`);
 
-  $(".artist-list").append(html);
-}
+        displayAlbums(response.items);
+      },
+      error: function () {
+        alert("SPOTIFY SCREWED UP! :(")
+      }
+    });
 
-function onArtistFindError(err){
-  console.log("You dun goofed", err);
+  });
+
+});
+
+
+
+// ====================================================================
+// ---------------------- DEFINITIONS ---------------------------
+
+
+function displayAlbums (albums) {
+  // Empty list in case it has old albums
+  $(".js-album-list").empty();
+
+  albums.forEach(function (album) {
+
+    var html = `
+      <!-- Store the album ID for the next AJAX request -->
+      <li data-album-id="${album.id}">
+        <img src="${album.images[1].url}">
+        <h5> ${album.name} </h5>
+      </li>
+    `;
+
+    $(".js-album-list").append(html);
+  });
+
+  $(".js-albums-modal").modal("show");
 }
